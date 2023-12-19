@@ -1,0 +1,26 @@
+{
+  "name": "tenant-app",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "NODE_ENV='test' bun test",
+    "dev": "bun --hot run --watch src/index.ts",
+    "db:push": "bunx drizzle-kit push:sqlite",
+    "db:gen": "bunx drizzle-kit generate:sqlite",
+    "db:local": "bun run ./src/db/migrate.ts"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.4.0-pre.5",
+    "@lucia-auth/adapter-sqlite": "^2.0.1",
+    "better-sqlite3": "^9.2.2",
+    "drizzle-orm": "^0.29.1",
+    "elysia": "latest",
+    "libsql": "^0.2.0-pre.4",
+    "lucia": "^2.7.4"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.6"
+  },
+  "module": "src/index.js"
+}
